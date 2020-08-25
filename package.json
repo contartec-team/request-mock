@@ -1,0 +1,58 @@
+{
+  "name": "@contartec-team/request-mock",
+  "version": "0.0.0",
+  "description": "Request mock made shorter",
+  "main": "lib/RequestMock",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "lint": "cross-env NODE_ENV=test eslint -c ./.eslintrc.json \"lib/**/*.js\"",
+    "docs": "documentation readme lib/** --section=Docs",
+    "update:docs": "npm run docs && git add README.md && git diff-index --quiet HEAD || git commit -m 'Updating `docs`'",
+    "update-version": "node -e 'require(\"@contartec-team/version-release\").updateVersion()'",
+    "release-version": "node -e 'require(\"@contartec-team/version-release\").releaseVersion()'"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://contartec@github.com/contartec-team/request-mock.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "mocks",
+    "request",
+    "stub",
+    "sinon"
+  ],
+  "author": "contartec",
+  "license": "MIT",
+  "peerDependencies": {
+    "sinon": "^9.0.2"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@contartec-team/version-release": "git+https://github.com/contartec-team/version-release.git",
+    "@contartec-team/git-hooks": "git+https://fed9850abdf8b499b416bfd1d3f92ec3a38dee6d:x-oauth-basic@github.com/contartec-team/git-hooks.git",
+    "documentation": "^11.0.0",
+    "eslint": "^5.16.0",
+    "husky": "^3.0.5",
+    "nyc": "^14.1.1",
+    "sinon": "^9.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run update:docs"
+    }
+  },
+  "nyc": {
+    "exclude": [
+      "*.js",
+      "tests",
+      "configs"
+    ]
+  }
+}
