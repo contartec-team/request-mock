@@ -1,6 +1,6 @@
 {
   "name": "@contartec-team/request-mock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Request mock made shorter",
   "main": "lib/RequestMock",
   "directories": {
