@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   checkout_code:
-    working_directory: /home/circleci/spy-mock
+    working_directory: /home/circleci/request-mock
 
     docker:
       - image: circleci/node:10.14
@@ -16,7 +16,7 @@ jobs:
             - ./
 
   node_dependencies:
-    working_directory: /home/circleci/spy-mock
+    working_directory: /home/circleci/request-mock
 
     docker:
       - image: circleci/node:10.14
@@ -42,7 +42,7 @@ jobs:
             - ./node_modules
 
   npm_version:
-      working_directory: /home/circleci/spy-mock
+      working_directory: /home/circleci/request-mock
 
       docker:
         - image: circleci/node:10.18
@@ -59,7 +59,7 @@ jobs:
             command : npm run update-version
 
   npm_release:
-      working_directory: /home/circleci/spy-mock
+      working_directory: /home/circleci/request-mock
 
       docker:
         - image: circleci/node:10.18
