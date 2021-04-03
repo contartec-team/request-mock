@@ -1,3 +1,10 @@
+## 0.2.0 (2021-04-03)
+
+
+### Features
+
+* [`RequestMock`] Changing default `URL`
+
 ## 0.1.3 (2021-02-10)
 
 
